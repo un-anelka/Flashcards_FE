@@ -110,7 +110,6 @@ const Books = () => {
 
   return (
     <div>
-      <Layout />
       <div className="container">
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle>Update Link</DialogTitle>
@@ -156,39 +155,41 @@ const Books = () => {
             <h2>Descripition</h2>
             <p>{link.description}</p>
           </div>
-          <Button
-            className="button edit-btn"
-            onClick={handleClickOpen}
-            variant="contained"
-            sx={{
-              backgroundColor: "#dde4dc",
-              color: "black",
-              fontWeight: "700",
-              "&:hover": {
-                backgroundColor: "#dde4dd",
+          <div className="edit-delete-btn">
+            <Button
+              className="button edit-btn"
+              onClick={handleClickOpen}
+              variant="contained"
+              sx={{
+                backgroundColor: "#dde4dc",
                 color: "black",
-                opacity: 0.8,
-              },
-            }}
-          >
-            Edit
-          </Button>
-          <Button
-            className="button delete-btn"
-            onClick={onDelete}
-            variant="contained"
-            sx={{
-              backgroundColor: "#711608",
-              color: "#e7f0f2",
-              fontWeight: "700",
-              "&:hover": {
+                fontWeight: "700",
+                "&:hover": {
+                  backgroundColor: "#dde4dd",
+                  color: "black",
+                  opacity: 0.8,
+                },
+              }}
+            >
+              Edit
+            </Button>
+            <Button
+              className="button delete-btn"
+              onClick={onDelete}
+              variant="contained"
+              sx={{
                 backgroundColor: "#711608",
-                opacity: 0.8,
-              },
-            }}
-          >
-            Delete
-          </Button>
+                color: "#e7f0f2",
+                fontWeight: "700",
+                "&:hover": {
+                  backgroundColor: "#711608",
+                  opacity: 0.8,
+                },
+              }}
+            >
+              Delete
+            </Button>
+          </div>
         </div>
       ))}
     </div>

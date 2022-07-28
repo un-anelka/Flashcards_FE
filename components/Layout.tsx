@@ -1,7 +1,9 @@
 import { Button, Link } from "@mui/material";
 import React from "react";
+import Nav from "./Nav";
 
-const Layout = () => {
+//@ts-ignore
+const Layout = ({ children }) => {
   //@ts-ignore
   const handleClick = (e) => {
     e.preventDefault();
@@ -9,12 +11,8 @@ const Layout = () => {
   };
   return (
     <div className="navbar-one">
-      <Button variant="contained" onClick={handleClick}>
-        Home
-      </Button>
-      <Button variant="contained" onClick={handleClick}>
-        Sign Out
-      </Button>
+      <Nav />
+      {children}
     </div>
   );
 };
