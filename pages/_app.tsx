@@ -8,11 +8,11 @@ import apolloClient from "../lib/apollo";
 import Layout from "../components/Layout";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ApolloProvider client={apolloClient}>
-      <Layout>
+    <Layout>
+      <ApolloProvider client={apolloClient}>
         <Component {...pageProps} />
-      </Layout>
-    </ApolloProvider>
+      </ApolloProvider>{" "}
+    </Layout>
   );
 }
 
