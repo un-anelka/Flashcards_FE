@@ -1,0 +1,144 @@
+body {
+  /* background-color: #e7f0f2; */
+  background-color: #c8d0d2;
+  margin: 0;
+}
+
+.container {
+  max-width: 98%;
+  margin: 1rem 2rem;
+  align-self: center;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+  /* background-color: #dde4dc; */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.form-group > label {
+  color: #777;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.btn {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsl(200, 100%, 40%);
+}
+
+.card-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  transform-style: preserve-3d;
+
+  transition: 400ms;
+  transform: rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+  min-height: 300px;
+}
+
+.card:hover {
+  --translate-y: -2px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+  max-height: 300px;
+  color: white;
+  /* background-color: rgb(115, 128, 152); */
+  background-color: rgb(71, 115, 197);
+}
+
+.card .front {
+  /* left: 0; */
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.card .back {
+  /* right: 0; */
+  overflow-y: scroll;
+  max-height: 250px;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+}
+.card .back {
+  flex: 1;
+  transform: rotateY(180deg);
+}
+
+/* Add Links page (dashboard)*/
+
+.links {
+  margin: 30px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  border: rgb(56, 52, 52) solid 5px;
+}
+
+.button {
+  background-color: white;
+  color: #000;
+}
+
+.button:hover {
+  background-color: red;
+  color: white;
+}
+
+p span a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+p span a:focus,
+p span a:hover,
+p span a:active {
+  text-decoration: underline;
+}
+
+.navbar-one {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  position: r;
+  top: 20px;
+}
+
+.heads {
+  display: flex;
+  color: #0070f3;
+  justify-content: center;
+  font-weight: 700;
+}
