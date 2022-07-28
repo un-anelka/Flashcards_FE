@@ -47,7 +47,7 @@ const Books = () => {
   });
   //@ts-ignore
   const onDelete = (e) => {
-    let target_id = e.target.parentElement.id;
+    let target_id = e.target.parentElement.parentElement.id;
     console.log("deleted link", target_id);
     delete_Link({ variables: { id: target_id } });
   };
