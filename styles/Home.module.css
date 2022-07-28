@@ -1,6 +1,6 @@
-.container {
+/* .container {
   padding: 0 2rem;
-}
+} */
 .Home_container__bCOhY {
   min-height: 100vh;
   max-width: 100vh;
@@ -16,23 +16,25 @@
 }
 
 .footer {
-  display: flex;
-  /* flex: 1; */
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
   background-color: #0070f3;
   position: absolute;
+  margin-bottom: 0;
   bottom: 0;
-  width: 95%;
+  width: 100%;
 }
 
-.footer a {
+.footer div {
   display: flex;
+  margin: auto;
   justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+}
+.footer div p {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .title a {

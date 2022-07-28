@@ -26,7 +26,7 @@ const Links = () => {
 
   return (
     <div className="container">
-      <SignInLayout />
+      {/* <SignInLayout /> */}
       <div className="heads">
         <h1>ALL LINKS</h1>
       </div>
