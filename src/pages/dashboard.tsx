@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import InputForm from "../components/inputForm";
 import {
@@ -21,6 +21,15 @@ import Skeleton from "../components/Skeleton";
 const Books = () => {
   const [id, setId] = useState("");
   const [open, setOpen] = useState(false);
+  const [token, setToken] = useState("");
+  console.log("old new", token);
+
+  useEffect(() => {
+    const getToken = localStorage.getItem("token");
+    console.log("GetToken", getToken);
+    //@ts-ignore
+    setToken(getToken);
+  });
   //@ts-ignore
   const onSubmit = (e) => {
     e.preventDefault();
