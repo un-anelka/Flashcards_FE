@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { allBooksQuery } from "../lib/querries";
 import Linklist from "../components/Linklist";
-import SignInLayout from "../components/SignInLayout";
 
 const Links = () => {
   //Query links
@@ -26,7 +25,6 @@ const Links = () => {
 
   return (
     <div className="container">
-      {/* <SignInLayout /> */}
       <div className="heads">
         <h1>ALL LINKS</h1>
       </div>
