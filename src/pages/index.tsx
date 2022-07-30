@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Nav from "../components/Nav";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Sign In to add your own
           <span style={{ display: "inline-block", marginLeft: "3px" }}>
-            <a href="./books">Link</a>
+            <a href="./dashboard">Link</a>
           </span>
         </p>
       </main>
@@ -29,11 +28,7 @@ const Home: NextPage = () => {
       <footer className={styles.footer}>
         <div>
           <p>
-            Powered by{" "}
-            <span className={styles.logo}>
-              {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
-              UN R.
-            </span>
+            Powered by <span className={styles.logo}>UN R.</span>
           </p>
         </div>
       </footer>
