@@ -34,8 +34,8 @@ export const DELETE_LINK = gql`
 `;
 
 export const UPDATE_LINK = gql`
-  mutation Update_Link($id: String!, $newurl: String, $newdescription: String) {
-    Update_Link(id: $id, url: $newurl, description: $newdescription) {
+  mutation Update_Link($id: String!, $url: String, $description: String) {
+    Update_Link(id: $id, url: $url, description: $description) {
       id
       description
       url
