@@ -22,11 +22,10 @@ const Books = () => {
   const [id, setId] = useState("");
   const [open, setOpen] = useState(false);
   const [token, setToken] = useState("");
-  console.log("old new", token);
-
+  // console.log("set id", id);
   useEffect(() => {
     const getToken = localStorage.getItem("token");
-    console.log("GetToken", getToken);
+    // console.log("GetToken", getToken);
     //@ts-ignore
     setToken(getToken);
   });
@@ -62,27 +61,27 @@ const Books = () => {
   };
 
   // update Links
-  const [Update_Link] = useMutation(
-    UPDATE_LINK,
+  const [Update_Link] = useMutation(UPDATE_LINK, {
+    onCompleted: (data) => {
+      console.log("Data", data);
+      window.location.reload();
+    },
+  });
 
-    {
-      onCompleted: (data) => {
-        window.location.reload();
-      },
-    }
-  );
-
-  console.log("==>", id);
   //@ts-ignore
   const onUpdate = (e) => {
     e.preventDefault();
     let target_id = id;
-    //   console.log("=========", target_id);
+    // let newDescription = e.target.parentElement.parentElement.url.value;
+    // let newID = e.target.parentElement.parentElement.description.value;
+    // console.log("========= Desc", newID);
+    // console.log("=========URL", newDescription);
+    // console.log("New target ID", target_id);
     Update_Link({
       variables: {
         id: target_id,
-        description: e.target.parentElement.parentElement.description.value,
         url: e.target.parentElement.parentElement.url.value,
+        description: e.target.parentElement.parentElement.description.value,
       },
       refetchQueries: [{ query: allBooksQuery }],
     });
@@ -91,8 +90,9 @@ const Books = () => {
   // @ts-ignore
   const handleClickOpen = (e) => {
     e.preventDefault();
-    let updateid = e.target.parentElement.id;
-    // console.log("id", updateid);
+    let updateid = e.target.parentElement.parentElement.id;
+    console.log("e.target.parentElement", e.target.parentElement);
+    console.log("id", updateid);
     setId(updateid);
     setOpen(true);
   };
@@ -103,11 +103,11 @@ const Books = () => {
   //Query links
   const { error, loading, data } = useQuery(allBooksQuery);
   if (loading) {
-    console.log("loading...");
+    // console.log("loading...");
     return <Skeleton />;
   }
   if (error) {
-    console.log("error!");
+    // console.log("error!");
     return <h3>Oops! something went wrong, {error.message}</h3>;
   }
 
@@ -145,7 +145,8 @@ const Books = () => {
             </DialogContent>
             <DialogActions>
               <Button onClick={handleClose}>Cancel</Button>
-              <Button type="submit">Update</Button>
+              {/* <Button type="submit">Update</Button> */}
+              <Button onClick={onUpdate}>Update</Button>
             </DialogActions>
           </form>
         </Dialog>
